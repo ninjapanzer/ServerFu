@@ -16,7 +16,7 @@
 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
   
 	<!-- Included CSS Files -->
-	<%= stylesheet_link_tag    "application" %>
+	<%= stylesheet_link_tag "application" %>
 	
 	<!-- Included JS Files  -->
 	<%= javascript_include_tag "application" %>
@@ -41,7 +41,7 @@
 
     <!-- Main Feed -->
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-    <div id="content" class="six columns push-three">
+    <div id="content" class="nine columns push-three">
     	<%= content_for?(:content) ? yield(:content) : yield %>
     </div>
 
