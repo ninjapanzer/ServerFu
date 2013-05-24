@@ -1,0 +1,29 @@
+<%= form_for(@log) do |f| %>
+  <% if @log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+
+      <ul>
+      <% @log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Subject %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :Comment %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field"><br/>
+    <%= f.label :Server %>
+    <strong><%= @log.server.name %></strong>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

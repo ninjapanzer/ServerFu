@@ -1,0 +1,6 @@
+<% @server.server_logs.each_with_index do |log, index| %>
+<%= index + 1 %>&nbsp;&nbsp;&nbsp;
+<%= log.created_at %><br/>
+<strong><%= log.title %></strong>
+<%= log.body %><br/>
+<% end %>

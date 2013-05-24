@@ -9,6 +9,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @servers.each do |server| %>
@@ -18,6 +19,7 @@
     <td><%= server.ip %></td>
     <td><%= server.comments %></td>
     <td><%= link_to 'Show', server %></td>
+    <td><%= link_to 'Log', server_logs_path(server) %></td>
     <td><%= link_to 'Edit', edit_server_path(server) %></td>
     <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

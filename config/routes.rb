@@ -4,7 +4,11 @@ ServerFu::Application.routes.draw do
 
   resources :domains
 
+  get 'servers/new_log/:id' => 'logs#new_server_log', as: 'server_logs'
+  post 'servers/new_log/:id' => 'logs#create_server_log'
+  get 'servers/logs/:id' => 'logs#index', as: 'server_logs_index'
   resources :servers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

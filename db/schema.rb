@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219010910) do
+ActiveRecord::Schema.define(:version => 20130524132810) do
+
+  create_table "domain_logs", :force => true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.integer  "domain_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "domain_logs", ["domain_id"], :name => "index_domain_logs_on_domain_id"
 
   create_table "domains", :force => true do |t|
     t.string   "name"
@@ -23,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20121219010910) do
   end
 
   add_index "domains", ["server_id"], :name => "index_domains_on_server_id"
+
+  create_table "server_logs", :force => true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.integer  "server_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "server_logs", ["server_id"], :name => "index_server_logs_on_server_id"
 
   create_table "servers", :force => true do |t|
     t.string   "name"
